@@ -1,0 +1,55 @@
+﻿<Window x:Class="NTAC_db.GUI.DbDataDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NTAC_db.GUI"
+        mc:Ignorable="d"
+        Title="Datos de conexión" Height="345" Width="500" ResizeMode="NoResize">
+    
+    <Grid Background="{DynamicResource Windowbg}">
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Background" Value="{DynamicResource TextBoxBg}"/>
+                <Setter Property="Foreground" Value="{DynamicResource SettingsText}"/>
+                <Setter Property="Width" Value="170"/>
+                <Setter Property="Height" Value="21"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="{DynamicResource ButtonBg}"/>
+                <Setter Property="Foreground" Value="{DynamicResource ButtonFg}"/>
+                <Setter Property="Width" Value="80"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+            </Style>
+        </Grid.Resources>
+
+        <Canvas HorizontalAlignment="Center" Width="200">
+            <TextBlock Text="Dirrecion IP" Margin="60,15"/>
+            <TextBox x:Name="address" Margin="15,45"/>
+            <TextBlock Text="Puerto" Margin="80,75"/>
+            <TextBox x:Name="port" Margin="15,105"/>
+            <TextBlock Text="Nombre de la base de datos" Margin="13,140"/>
+            <TextBox x:Name="dbName" Margin="15,170"/>
+            <TextBlock Text="Nombre de la tabla" Margin="42,200"/>
+            <TextBox x:Name="tableName" Margin="15,230"/>
+        </Canvas>
+
+        <StackPanel HorizontalAlignment="Center" Margin="5" Height="30" VerticalAlignment="Bottom" Orientation="Horizontal">
+            <Button x:Name="confirm" Content="Confirmar" Click="confirm_Click" Margin="10,0"/>
+            <Button x:Name="cancel" Content="Cancelar" Click="cancel_Click" Margin="10,0"/>
+        </StackPanel>
+
+        <Image Source="/Resources/img/input.png" Margin="25" Width="60" Height="60" HorizontalAlignment="Left"/>
+    </Grid>
+</Window>

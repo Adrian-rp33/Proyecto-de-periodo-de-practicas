@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="NTAC_db.GUI.Components.ToolTip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NTAC_db.GUI.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="400">
+    
+    <Grid>
+        <TextBlock x:Name="Title" Margin="0,0,0,0" HorizontalAlignment="Center" Text="Datos en este punto" Foreground="{DynamicResource Text}" FontSize="20"/>
+        <!-- Al agregar una linea mas, el tamaño del tooltip debera aumentar ademas de que tiene que hacer saltos de linea despues de 
+             cada nueva propiedad (Por codigo) -->
+        <Label x:Name="Lines" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="40" FontSize="14"/>
+    </Grid>
+</UserControl>

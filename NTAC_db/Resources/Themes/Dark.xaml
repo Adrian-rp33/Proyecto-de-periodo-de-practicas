@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush Color="#FF2B2A2B" x:Key="Windowbg"/>
+    <SolidColorBrush Color="White" x:Key="RectangleBorder"/>
+    
+    <!-- Estilos de texto -->
+    <SolidColorBrush Color="#138492" x:Key="Text"/>
+    <SolidColorBrush Color="White" x:Key="SettingsText"/>
+
+    <!-- Estilos de Listas -->
+    <SolidColorBrush Color="#292a34" x:Key="ListBg"/>
+    <SolidColorBrush Color="White" x:Key="ListFg"/>
+
+    <!-- Estilos de ComboBox -->
+    <SolidColorBrush Color="#409ee9" x:Key="Arrow"/>
+    <SolidColorBrush Color="#31323e" x:Key="ArrowBgUnselected"/>
+    <SolidColorBrush Color="#424353" x:Key="ArrowBgSelected"/>
+    <SolidColorBrush Color="#484a5b" x:Key="PopUpBg"/>
+    <SolidColorBrush Color="#409ee9" x:Key="ComboBoxItemFg"/>
+    <SolidColorBrush Color="#585a6f" x:Key="MouseOverItem"/>
+
+    <!-- Estilos de DataGrids -->
+    <SolidColorBrush Color="#FF2B2A2B" x:Key="DataGridBg"/>
+    <SolidColorBrush Color="#1c2935" x:Key="DataGridBorder"/>
+    <SolidColorBrush Color="#3a5567" x:Key="DataGridHeaderBg"/>
+    <SolidColorBrush Color="#253641" x:Key="DataGridHeaderBorder"/>
+    <SolidColorBrush Color="#bdced9" x:Key="DataGridFg"/>
+
+    <!-- Estilos de botones -->
+    <!-- Normal -->
+    <SolidColorBrush Color="#313640" x:Key="ButtonBg"/>
+    <SolidColorBrush Color="#138492" x:Key="ButtonFg"/>
+    <SolidColorBrush Color="White" x:Key="ButtonBorder"/>
+    <!-- Desabilitado -->
+    <SolidColorBrush Color="#505969" x:Key="ButtonBgDisabled"/>
+    <SolidColorBrush Color="#18a3b5" x:Key="ButtonFgDisabled"/>
+
+    <!-- Estilos de menus -->
+    <SolidColorBrush Color="#162026" x:Key="MenuBg"/>
+    <SolidColorBrush Color="#138492" x:Key="MenuItemFg"/>
+
+    <!-- Estilos de barras de input para texto -->
+    <SolidColorBrush Color="#FF2B2A2B" x:Key="TextBoxBg"/>
+    <SolidColorBrush Color="#138492" x:Key="TextBoxFg"/>
+    
+    <!-- Estilos para grafica -->
+    <SolidColorBrush Color="#FF2B2A2B" x:Key="Chartbg"/>
+    <SolidColorBrush Color="#138492" x:Key="ChartAxes"/>
+    <SolidColorBrush Color="#19abbd" x:Key="MajorLines"/>
+</ResourceDictionary>

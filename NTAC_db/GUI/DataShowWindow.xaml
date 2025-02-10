@@ -1,0 +1,125 @@
+﻿<Window x:Class="NTAC_db.GUI.DataShowWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:LoadingAnimation="clr-namespace:NTAC_db.GUI.LoadingAnimation"
+        mc:Ignorable="d"
+        Title="Muestra de datos" Height="550" Width="1270" MinWidth="1200" MinHeight="450" 
+        Icon="/Resources/img/info_icon.ico"
+        WindowState="Maximized"
+        WindowStyle="None">
+
+    <Grid Background="{DynamicResource Windowbg}">
+        
+        <LoadingAnimation:Loading x:Name="loading" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" Panel.ZIndex="2"/>
+        
+        <DataGrid x:Name="table" ItemsSource="{Binding Path=DataList}" AutoGenerateColumns="False" Margin="0,24,0,0" Panel.ZIndex="1">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGrid}">
+                    <Setter Property="Background" Value="{DynamicResource DataGridBg}"/>
+                    <Setter Property="RowBackground" Value="{DynamicResource DataGridBg}"/>
+                    <Setter Property="BorderThickness" Value="1.5"/>
+                    <Setter Property="BorderBrush" Value="{DynamicResource DataGridBorder}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource DataGridFg}"/>
+                </Style>
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Background" Value="{DynamicResource ButtonBg}"/>
+                </Style>
+                <Style TargetType="RepeatButton">
+                    <Setter Property="Background" Value="{DynamicResource ButtonBg}"/>
+                </Style>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="{DynamicResource DataGridHeaderBg}"/>
+                    <Setter Property="Padding" Value="2"/>
+                    <Setter Property="Height" Value="24"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="{DynamicResource DataGridHeaderBorder}"/>
+                </Style>
+            </DataGrid.Resources>
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=timeInt}" Header="Fecha en entero"/>
+                <DataGridTextColumn Binding="{Binding Path=timeStr}" Header="Fecha"/>
+                <DataGridTextColumn Binding="{Binding Path=b_masa1}" Header="Bomba masa 1"/>
+                <DataGridTextColumn Binding="{Binding Path=b_masa2}" Header="Bomba masa 2"/>
+                <DataGridTextColumn Binding="{Binding Path=b_masa3}" Header="Bomba masa 3"/>
+                <DataGridTextColumn Binding="{Binding Path=b_masa4}" Header="Bomba masa 4"/>
+                <DataGridTextColumn Binding="{Binding Path=caudal1}" Header="Caudal 1"/>
+                <DataGridTextColumn Binding="{Binding Path=caudal2}" Header="Caudal 2"/>
+                <DataGridTextColumn Binding="{Binding Path=caudal_acum1}" Header="Caudal acumulado 1"/>
+                <DataGridTextColumn Binding="{Binding Path=caudal_acum2}" Header="Caudal acumulado 2"/>
+                <DataGridTextColumn Binding="{Binding Path=decanter}" Header="Decanter"/>
+                <DataGridTextColumn Binding="{Binding Path=dec_horas_parcial}" Header="Dec horas parcial"/>
+                <DataGridTextColumn Binding="{Binding Path=dec_horas_total}" Header="Dec horas total"/>
+                <DataGridTextColumn Binding="{Binding Path=int_md}" Header="Entero md"/>
+                <DataGridTextColumn Binding="{Binding Path=par_bd}" Header="Par bd"/>
+                <DataGridTextColumn Binding="{Binding Path=rpm_bd}" Header="Rpm bd"/>
+                <DataGridTextColumn Binding="{Binding Path=rpm_diff}" Header="Rpm diff"/>
+                <DataGridTextColumn Binding="{Binding Path=rpm_md}" Header="Rpm md"/>
+                <DataGridTextColumn Binding="{Binding Path=t_rod_alim}" Header="T rod alim"/>
+                <DataGridTextColumn Binding="{Binding Path=t_rod_sal}" Header="T rod salida"/>
+                <DataGridTextColumn Binding="{Binding Path=vibrac}" Header="vibracion"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Menu Height="24" Margin="0" VerticalAlignment="Top" Background="{DynamicResource MenuBg}">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+
+            <Menu.Resources>
+                <Style TargetType="{x:Type MenuItem}">
+                    <Setter Property="Background" Value="{DynamicResource MenuBg}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource MenuItemFg}"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="FontFamily" Value="Ebrima"/>
+                    <Setter Property="FontSize" Value="12"/>
+                </Style>
+            </Menu.Resources>
+            
+            <MenuItem Header="Opciones" Height="24" Width="60" Grid.Column="0">
+                <MenuItem Name="preferences" Header="Preferencias" Click="preferences_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/img/preferences_icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="compare" Header="Comparar" Click="compare_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/img/compare_icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="settings" Header="Configuración" Click="settings_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/img/settings_icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Gestion de datos" Grid.Column="1">
+                <MenuItem Name="addToDB" Header="Subir datos" Click="addToDB_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/img/addDB_icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="deleteFromDB" Header="Eliminar" Click="deleteFromDB_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/img/deleteDB_icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="minimice" Click="minimice_Click" Header="_" Grid.Column="5" HorizontalAlignment="Right" ToolTip="Minimizar"/>
+            <MenuItem x:Name="close" Click="close_Click" Header="X" Grid.Column="6" HorizontalAlignment="Right" ToolTip="Cerrar"/>
+        </Menu>
+    </Grid>
+</Window>
